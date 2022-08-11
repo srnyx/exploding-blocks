@@ -1,0 +1,21 @@
+name: ExplodingBlocks
+author: srnyx
+description: Every block you break will explode.
+
+main: xyz.srnyx.explodingblocks.Main
+version: ${version}
+api-version: 1.19
+
+commands:
+  eb:
+    description: "Starts the Exploding Blocks plugin"
+    usage: "Usage: /<command> [start|stop]"
+    permission: explodingblocks.start
+
+permissions:
+  eb.toggle:
+    description: "Allows you to use /eb"
+  eb.start:
+    description: "Allows you to use /eb start"
+  eb.stop:
+    description: "Allows you to use /eb stop"
