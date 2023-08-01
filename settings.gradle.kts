@@ -1,1 +1,1 @@
-rootProject.name = "Exploding-Blocks"
+rootProject.name = "ExplodingBlocks"

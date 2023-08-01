@@ -1,15 +1,17 @@
 # Exploding Blocks
 
-Every block you break will explode (1.19.2). Made for [SaneLad](https://www.youtube.com/channel/UC9UPM3JuWOKKAV0D5YKEsfA).
+Every block you break will explode, so be careful... *Made for [SaneLad](https://www.youtube.com/channel/UC9UPM3JuWOKKAV0D5YKEsfA)*
 
-## Commands
+**🐛 Bugs / 💡 Suggestions:** Please [open an issue](https://github.com/srnyx/exploding-blocks/issues/new/choose) to report a bug or suggest an idea
 
-- `/eb`: Toggles blocks exploding
-- `/eb start`: Enables blocks exploding
-- `/eb stop`: Disables blocks exploding
+**🆘 Support:** Please [join the Discord](https://srnyx.com/discord) to get support
 
-### Disclaimer
+## Download
 
-I made this in a few hours so don't expect it to be perfect.
+**✅ Stable:** You can download the latest **stable** version at [Modrinth](https://modrinth.com/plugin/exploding-blocks), [Hangar](https://hangar.papermc.io/srnyx/ExplodingBlocks), [Spigot](https://spigotmc.org/resources/104482), [Bukkit](https://dev.bukkit.org/projects/exploding-blocks), or [GitHub](https://github.com/srnyx/exploding-blocks/releases)
 
-I'd be happy to fix any bugs, just report them [here](https://github.com/srnyx/exploding-blocks/issues).
+**🚧 Snapshot:** You can download the latest **snapshot** version at [actions/workflows/build.yml](https://github.com/srnyx/exploding-blocks/actions/workflows/build.yml)
+
+# Wiki
+
+For all information about the plugin (commands, permissions, etc...) please see the wiki at [github.com/srnyx/limited-lives/wiki](https://github.com/srnyx/exploding-blocks/wiki)

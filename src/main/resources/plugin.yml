@@ -1,21 +1,23 @@
-name: ExplodingBlocks
-author: srnyx
-description: Every block you break will explode.
+name: ${name}
+description: ${description}
+authors:
+  - srnyx
+website: https://srnyx.com
 
-main: xyz.srnyx.explodingblocks.Main
+main: ${group}.explodingblocks.ExplodingBlocks
 version: ${version}
-api-version: 1.19
+api-version: 1.14
+
+softdepend:
+  - PlaceholderAPI
 
 commands:
   eb:
-    description: "Starts the Exploding Blocks plugin"
-    usage: "Usage: /<command> [start|stop]"
-    permission: explodingblocks.start
+    description: Toggles the Exploding Blocks plugin
+    aliases:
+      - explodingblocks
+    permission: eb.toggle
 
 permissions:
   eb.toggle:
-    description: "Allows you to use /eb"
-  eb.start:
-    description: "Allows you to use /eb start"
-  eb.stop:
-    description: "Allows you to use /eb stop"
+    description: Allows the player to use /eb
