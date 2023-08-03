@@ -14,4 +14,4 @@ Every block you break will explode, so be careful... *Made for [SaneLad](https:/
 
 # Wiki
 
-For all information about the plugin (commands, permissions, etc...) please see the wiki at [github.com/srnyx/limited-lives/wiki](https://github.com/srnyx/exploding-blocks/wiki)
+For all information about the plugin (commands, permissions, etc...) please see the wiki at [github.com/srnyx/exploding-blocks/wiki](https://github.com/srnyx/exploding-blocks/wiki)
