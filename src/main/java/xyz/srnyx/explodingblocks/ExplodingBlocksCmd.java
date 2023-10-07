@@ -1,4 +1,4 @@
-package xyz.srnyx.explodingblocks.commands;
+package xyz.srnyx.explodingblocks;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -8,13 +8,11 @@ import xyz.srnyx.annoyingapi.command.AnnoyingSender;
 import xyz.srnyx.annoyingapi.message.AnnoyingMessage;
 import xyz.srnyx.annoyingapi.message.DefaultReplaceType;
 
-import xyz.srnyx.explodingblocks.ExplodingBlocks;
-
 import java.util.Arrays;
 import java.util.List;
 
 
-public class ExplodingBlocksCmd implements AnnoyingCommand {
+public class ExplodingBlocksCmd extends AnnoyingCommand {
     @NotNull private final ExplodingBlocks plugin;
 
     public ExplodingBlocksCmd(@NotNull ExplodingBlocks plugin) {

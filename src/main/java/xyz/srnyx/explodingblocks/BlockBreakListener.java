@@ -1,4 +1,4 @@
-package xyz.srnyx.explodingblocks.listeners;
+package xyz.srnyx.explodingblocks;
 
 import org.bukkit.GameMode;
 import org.bukkit.GameRule;
@@ -16,13 +16,11 @@ import org.jetbrains.annotations.NotNull;
 
 import xyz.srnyx.annoyingapi.AnnoyingListener;
 
-import xyz.srnyx.explodingblocks.ExplodingBlocks;
-
 import java.util.Collection;
 import java.util.Random;
 
 
-public class BlockBreakListener implements AnnoyingListener {
+public class BlockBreakListener extends AnnoyingListener {
     @NotNull private static final Random RANDOM = new Random();
 
     @NotNull private final ExplodingBlocks plugin;

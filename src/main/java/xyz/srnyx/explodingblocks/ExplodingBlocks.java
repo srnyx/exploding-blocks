@@ -25,9 +25,7 @@ public class ExplodingBlocks extends AnnoyingPlugin {
                         PluginPlatform.spigot("104482")))
                 .bStatsOptions(bStatsOptions -> bStatsOptions.id(18868))
                 .registrationOptions
-                .automaticRegistration(automaticRegistration -> automaticRegistration.packages(
-                        "xyz.srnyx.explodingblocks.commands",
-                        "xyz.srnyx.explodingblocks.listeners"))
+                .toRegister(this, BlockBreakListener.class, ExplodingBlocksCmd.class)
                 .papiExpansionToRegister(() -> new ExplodingPlaceholders(this));
 
         reload();
