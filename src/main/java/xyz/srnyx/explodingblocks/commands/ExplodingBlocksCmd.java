@@ -39,17 +39,26 @@ public class ExplodingBlocksCmd implements AnnoyingCommand {
     @Override
     public void onCommand(@NotNull AnnoyingSender sender) {
         // No arguments
-        if (sender.args.length == 0) {
-            plugin.setExplodingEnabled(!plugin.enabled);
-            new AnnoyingMessage(plugin, "toggle")
-                    .replace("%state%", plugin.enabled, DefaultReplaceType.BOOLEAN)
-                    .send(sender);
+        if (sender.args.length != 1) {
+            sender.invalidArguments();
             return;
         }
 
-        // <on|...>
+        // reload
+        if (sender.argEquals(0, "reload")) {
+            plugin.reload();
+            new AnnoyingMessage(plugin, "reload").send(sender);
+            return;
+        }
+
+        // <on|off>
         final boolean toggle = sender.argEquals(0, "on");
-        plugin.setExplodingEnabled(toggle);
+        if (!toggle && !sender.argEquals(0, "off")) {
+            sender.invalidArgumentByIndex(0);
+            return;
+        }
+        plugin.enabled = toggle;
+        plugin.data.setSave("enabled", toggle);
         new AnnoyingMessage(plugin, "toggle")
                 .replace("%state%", toggle, DefaultReplaceType.BOOLEAN)
                 .send(sender);
@@ -57,6 +66,6 @@ public class ExplodingBlocksCmd implements AnnoyingCommand {
 
     @Override @Nullable
     public List<String> onTabComplete(@NotNull AnnoyingSender sender) {
-        return sender.args.length == 1 ? Arrays.asList("on", "off") : null;
+        return sender.args.length == 1 ? Arrays.asList("reload", "on", "off") : null;
     }
 }

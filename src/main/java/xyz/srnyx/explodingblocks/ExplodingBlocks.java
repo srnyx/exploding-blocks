@@ -1,5 +1,7 @@
 package xyz.srnyx.explodingblocks;
 
+import org.jetbrains.annotations.NotNull;
+
 import xyz.srnyx.annoyingapi.AnnoyingPlugin;
 import xyz.srnyx.annoyingapi.PluginPlatform;
 import xyz.srnyx.annoyingapi.file.AnnoyingData;
@@ -7,8 +9,12 @@ import xyz.srnyx.annoyingapi.file.AnnoyingResource;
 
 
 public class ExplodingBlocks extends AnnoyingPlugin {
-    public final boolean griefing = new AnnoyingResource(this, "config.yml").getBoolean("griefing");
-    public final AnnoyingData data = new AnnoyingData(this, "data.yml");
+    // Config
+    public boolean griefing;
+    public int chance;
+    public int size;
+    // Data
+    @NotNull public final AnnoyingData data = new AnnoyingData(this, "data.yml");
     public boolean enabled;
 
     public ExplodingBlocks() {
@@ -24,11 +30,15 @@ public class ExplodingBlocks extends AnnoyingPlugin {
                         "xyz.srnyx.explodingblocks.listeners"))
                 .papiExpansionToRegister(() -> new ExplodingPlaceholders(this));
 
-        enabled = data.getBoolean("enabled");
+        reload();
     }
 
-    public void setExplodingEnabled(boolean enabled) {
-        this.enabled = enabled;
-        data.setSave("enabled", enabled);
+    @Override
+    public void reload() {
+        final AnnoyingResource config = new AnnoyingResource(this, "config.yml");
+        griefing = config.getBoolean("griefing");
+        chance = config.getInt("chance");
+        size = config.getInt("size");
+        enabled = data.getBoolean("enabled");
     }
 }

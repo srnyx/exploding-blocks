@@ -37,4 +37,6 @@ error:
   # Command is used when it's disabled
   disabled-command: "%prefix%%se%%command%%pe% is disabled!@@%pe%%command%@@%command%"
 
+reload: "%prefix%Reloaded the config file!@@%p%%command%@@%command%"
+
 toggle: "%prefix%Exploding Blocks has been %s%%state==enabled//disabled%@@%p%%command%@@%command%" # %state==boolean%

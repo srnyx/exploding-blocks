@@ -19,9 +19,12 @@ import xyz.srnyx.annoyingapi.AnnoyingListener;
 import xyz.srnyx.explodingblocks.ExplodingBlocks;
 
 import java.util.Collection;
+import java.util.Random;
 
 
 public class BlockBreakListener implements AnnoyingListener {
+    @NotNull private static final Random RANDOM = new Random();
+
     @NotNull private final ExplodingBlocks plugin;
 
     public BlockBreakListener(@NotNull ExplodingBlocks plugin) {
@@ -35,7 +38,7 @@ public class BlockBreakListener implements AnnoyingListener {
 
     @EventHandler
     public void onBlockBreak(@NotNull BlockBreakEvent event) {
-        if (!plugin.enabled) return;
+        if (!plugin.enabled || RANDOM.nextInt(100) >= plugin.chance) return;
         final Player player = event.getPlayer();
         final Block block = event.getBlock();
         final World world = block.getWorld();
@@ -50,7 +53,7 @@ public class BlockBreakListener implements AnnoyingListener {
         // Summon Creeper to simulate explosion
         final Creeper creeper = (Creeper) world.spawnEntity(block.getLocation(), EntityType.CREEPER);
         final boolean changeMobGriefing = !plugin.griefing && Boolean.TRUE.equals(world.getGameRuleValue(GameRule.MOB_GRIEFING));
-        creeper.setExplosionRadius(2);
+        creeper.setExplosionRadius(plugin.size);
         if (changeMobGriefing) world.setGameRule(GameRule.MOB_GRIEFING, false);
         creeper.explode();
         if (changeMobGriefing) world.setGameRule(GameRule.MOB_GRIEFING, true);

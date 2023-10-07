@@ -1,2 +1,9 @@
 # Whether the explosion should destroy blocks
 griefing: false
+
+# The percent chance that a block will explode
+# 0 = 0% chance, 100 = 100% chance
+chance: 100
+
+# The size of the explosion (Default: 2)
+size: 2
