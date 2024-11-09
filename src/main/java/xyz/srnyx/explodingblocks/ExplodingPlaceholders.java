@@ -27,6 +27,6 @@ public class ExplodingPlaceholders extends AnnoyingPAPIExpansion {
 
     @Override @Nullable
     public String onPlaceholderRequest(@Nullable Player player, @NotNull String params) {
-        return params.equals("status") ? String.valueOf(plugin.enabled) : null;
+        return params.equals("status") ? String.valueOf(plugin.data.has(ExplodingBlocks.COL_ENABLED)) : null;
     }
 }

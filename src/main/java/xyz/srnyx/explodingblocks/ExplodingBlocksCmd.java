@@ -55,15 +55,16 @@ public class ExplodingBlocksCmd extends AnnoyingCommand {
             sender.invalidArgumentByIndex(0);
             return;
         }
-        plugin.enabled = toggle;
-        plugin.data.setSave("enabled", toggle);
+        plugin.data.set(ExplodingBlocks.COL_ENABLED, toggle);
         new AnnoyingMessage(plugin, "toggle")
                 .replace("%state%", toggle, DefaultReplaceType.BOOLEAN)
                 .send(sender);
     }
 
+    @NotNull private static final List<String> TAB_COMPLETE = Arrays.asList("reload", "on", "off");
+
     @Override @Nullable
     public List<String> onTabComplete(@NotNull AnnoyingSender sender) {
-        return sender.args.length == 1 ? Arrays.asList("reload", "on", "off") : null;
+        return sender.args.length == 1 ? TAB_COMPLETE : null;
     }
 }

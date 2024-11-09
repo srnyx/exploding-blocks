@@ -36,7 +36,7 @@ public class BlockBreakListener extends AnnoyingListener {
 
     @EventHandler
     public void onBlockBreak(@NotNull BlockBreakEvent event) {
-        if (!plugin.enabled || RANDOM.nextInt(100) >= plugin.chance) return;
+        if (!plugin.data.has(ExplodingBlocks.COL_ENABLED) || RANDOM.nextInt(100) >= plugin.config.chance) return;
         final Player player = event.getPlayer();
         final Block block = event.getBlock();
         final World world = block.getWorld();
@@ -50,8 +50,8 @@ public class BlockBreakListener extends AnnoyingListener {
 
         // Summon Creeper to simulate explosion
         final Creeper creeper = (Creeper) world.spawnEntity(block.getLocation(), EntityType.CREEPER);
-        final boolean changeMobGriefing = !plugin.griefing && Boolean.TRUE.equals(world.getGameRuleValue(GameRule.MOB_GRIEFING));
-        creeper.setExplosionRadius(plugin.size);
+        final boolean changeMobGriefing = !plugin.config.griefing && Boolean.TRUE.equals(world.getGameRuleValue(GameRule.MOB_GRIEFING));
+        creeper.setExplosionRadius(plugin.config.size);
         if (changeMobGriefing) world.setGameRule(GameRule.MOB_GRIEFING, false);
         creeper.explode();
         if (changeMobGriefing) world.setGameRule(GameRule.MOB_GRIEFING, true);
