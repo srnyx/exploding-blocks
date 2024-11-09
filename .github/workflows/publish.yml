@@ -9,7 +9,7 @@ jobs:
   publish:
     uses: srnyx/tools/.github/workflows/publish.yml@main
     with:
-      versions: ">=1.14.3"
+      versions: ">=1.14.2"
       modrinth: kKXUJTU9
       curseforge: 896921
     secrets: inherit
