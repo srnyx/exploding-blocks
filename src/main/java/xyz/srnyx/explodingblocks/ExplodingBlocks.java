@@ -47,9 +47,9 @@ public class ExplodingBlocks extends AnnoyingPlugin {
 
     private void convertOldData() {
         final AnnoyingData oldData = new AnnoyingData(this, "data.yml", new AnnoyingFile.Options<>().canBeEmpty(false));
+        if (!oldData.file.exists()) return;
         if (!oldData.contains("converted_now-stored-elsewhere") && oldData.getBoolean("enabled")) data.set(COL_ENABLED, true);
         oldData.setSave("converted_now-stored-elsewhere", true);
-
         // Rename data file to old-data.yml
         if (!oldData.file.renameTo(new File(oldData.file.getParent(), "data-old.yml"))) log(Level.WARNING, "&cFailed to rename old data file: &4" + oldData.file.getPath());
     }

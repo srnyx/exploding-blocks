@@ -10,7 +10,7 @@ plugins {
     id("com.gradleup.shadow") version "8.3.5"
 }
 
-setupAnnoyingAPI("5.1.3", "xyz.srnyx", "2.1.0", "Every block you break will explode")
+setupAnnoyingAPI("5.1.3", "xyz.srnyx", "2.1.1", "Every block you break will explode")
 spigotAPI("1.14.2")
 
 repository(Repository.PLACEHOLDER_API)

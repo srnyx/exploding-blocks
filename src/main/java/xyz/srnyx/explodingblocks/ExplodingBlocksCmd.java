@@ -55,7 +55,7 @@ public class ExplodingBlocksCmd extends AnnoyingCommand {
             sender.invalidArgumentByIndex(0);
             return;
         }
-        plugin.data.set(ExplodingBlocks.COL_ENABLED, toggle);
+        plugin.data.set(ExplodingBlocks.COL_ENABLED, toggle ? true : null);
         new AnnoyingMessage(plugin, "toggle")
                 .replace("%state%", toggle, DefaultReplaceType.BOOLEAN)
                 .send(sender);
