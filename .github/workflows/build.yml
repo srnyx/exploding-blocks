@@ -10,10 +10,12 @@ on:
       - 'settings.gradle.kts'
       - 'gradlew'
       - 'gradlew.bat'
+  release:
+    types:
+      - published
   workflow_dispatch:
 
 jobs:
   build:
-    uses: srnyx/tools/.github/workflows/build.yml@main
-    with:
-      name: Exploding Blocks
+    uses: srnyx/tools/.github/workflows/publish.yml@main
+    secrets: inherit

@@ -2,10 +2,8 @@ package xyz.srnyx.explodingblocks;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-
 import xyz.srnyx.annoyingapi.command.AnnoyingCommand;
 import xyz.srnyx.annoyingapi.command.AnnoyingSender;
-import xyz.srnyx.annoyingapi.message.AnnoyingMessage;
 import xyz.srnyx.annoyingapi.message.DefaultReplaceType;
 
 import java.util.Arrays;
@@ -45,7 +43,7 @@ public class ExplodingBlocksCmd extends AnnoyingCommand {
         // reload
         if (sender.argEquals(0, "reload")) {
             plugin.reload();
-            new AnnoyingMessage(plugin, "reload").send(sender);
+            plugin.getMessages().get().reload.newMessage().send(sender);
             return;
         }
 
@@ -56,7 +54,7 @@ public class ExplodingBlocksCmd extends AnnoyingCommand {
             return;
         }
         plugin.data.set(ExplodingBlocks.COL_ENABLED, toggle ? true : null);
-        new AnnoyingMessage(plugin, "toggle")
+        plugin.getMessages().get().toggle.newMessage()
                 .replace("%state%", toggle, DefaultReplaceType.BOOLEAN)
                 .send(sender);
     }

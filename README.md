@@ -15,3 +15,9 @@ Every block you break will explode, so be careful... *Made for [SaneLad](https:/
 # Wiki
 
 For all information about the plugin (commands, permissions, etc...) please see the wiki at [github.com/srnyx/exploding-blocks/wiki](https://github.com/srnyx/exploding-blocks/wiki)
+
+### not sponsors, just cool stuff :)
+
+[![Lilypad server hosting](https://srnyx.com/assets/banners/lilypad.png)](https://srnyx.com/lilypad?utm_medium=listing&utm_content=lilypad&utm_source=github&utm_campaign=exploding-blocks)
+[![Review me on TrustPilot!](https://srnyx.com/assets/banners/reviewme.png)](https://srnyx.com/review?utm_medium=listing&utm_content=review&utm_source=github&utm_campaign=exploding-blocks)
+[![Host events on Event Alerts](https://srnyx.com/assets/banners/eventalerts.png)](https://eventalerts.gg?utm_medium=listing&utm_content=eventalerts&utm_source=github&utm_campaign=exploding-blocks)

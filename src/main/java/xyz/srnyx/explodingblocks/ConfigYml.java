@@ -1,20 +1,23 @@
 package xyz.srnyx.explodingblocks;
 
-import org.jetbrains.annotations.NotNull;
+import eu.okaeri.configs.annotation.Comment;
+import xyz.srnyx.annoyingapi.file.okaeri.RootConfig;
+import xyz.srnyx.annoyingapi.stats.Stat;
 
-import xyz.srnyx.annoyingapi.AnnoyingPlugin;
-import xyz.srnyx.annoyingapi.file.AnnoyingResource;
 
+public class ConfigYml extends RootConfig {
+    @Comment("Whether the explosion should destroy blocks")
+    @Stat
+    public boolean griefing = false;
 
-public class ConfigYml {
-    public final boolean griefing;
-    public final int chance;
-    public final int size;
+    @Comment
+    @Comment("The percent chance that a block will explode")
+    @Comment("0 = 0% chance, 100 = 100% chance")
+    @Stat
+    public int chance = 100;
 
-    public ConfigYml(@NotNull AnnoyingPlugin plugin) {
-        final AnnoyingResource config = new AnnoyingResource(plugin, "config.yml");
-        griefing = config.getBoolean("griefing", false);
-        chance = config.getInt("chance", 100);
-        size = config.getInt("size", 2);
-    }
+    @Comment
+    @Comment("The size of the explosion (default: 2")
+    @Stat
+    public int size = 2;
 }
